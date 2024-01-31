@@ -36,3 +36,17 @@ input {
   border-radius: 8px;
   padding: 8px 12px;
 }
+
+.btn {
+  color: #fff;
+  background: #6997d3;
+  border-color: transparent;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+
+  &:disabled {
+    background: #d1d6de;
+    border-color: #bec9db;
+  }
+}

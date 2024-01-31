@@ -51,6 +51,7 @@
     margin: 0;
   }
 }
+
 .form-section {
   form {
     max-width: 400px;
@@ -89,5 +90,10 @@
     font-size: 14px;
     text-align: center;
     margin: 20px auto;
+  }
+
+  pre {
+    font-size: 12px;
+    margin-bottom: 0;
   }
 }

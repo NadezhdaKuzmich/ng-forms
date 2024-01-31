@@ -25,10 +25,16 @@
       <div class="input-field">
         <label for="email">Email</label>
         <input id="email" type="text" [formControlName]="'email'" />
+        <!-- <pre>
+          {{ loginForm.get("email")?.errors | json }}
+        </pre> -->
       </div>
       <div class="input-field">
         <label for="password">Password</label>
         <input id="password" type="password" [formControlName]="'password'" />
+        <!-- <pre>
+          {{ loginForm.get("password")?.errors | json }}
+        </pre> -->
       </div>
       <details formGroupName="name">
         <summary>Addition Info</summary>
@@ -41,7 +47,21 @@
           <input id="surname" type="text" formControlName="lastName" />
         </div>
       </details>
-      <input class="btn" type="submit" value="Submit" />
+      <div>
+        <label>
+          <input type="checkbox" formControlName="agree" />
+          I Agree to Privacy Policy
+        </label>
+        <!-- <pre>
+          {{ loginForm.get("agree")?.errors | json }}
+        </pre> -->
+      </div>
+      <input
+        class="btn"
+        type="submit"
+        value="Submit"
+        [disabled]="loginForm.invalid"
+      />
     </fieldset>
   </form>
   <div class="json-data">

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-binding',
@@ -16,8 +16,12 @@ export class BindingComponent {
 
   constructor() {
     this.loginForm = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl(''),
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+      agree: new FormControl(false, Validators.requiredTrue),
       name: new FormGroup({
         firstName: new FormControl(''),
         lastName: new FormControl(''),
