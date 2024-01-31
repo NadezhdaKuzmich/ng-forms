@@ -30,8 +30,21 @@
         <label for="password">Password</label>
         <input id="password" type="password" [formControlName]="'password'" />
       </div>
+      <details formGroupName="name">
+        <summary>Addition Info</summary>
+        <div class="input-field">
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="firstName" />
+        </div>
+        <div class="input-field">
+          <label for="surname">Surname</label>
+          <input id="surname" type="text" formControlName="lastName" />
+        </div>
+      </details>
       <input class="btn" type="submit" value="Submit" />
     </fieldset>
   </form>
-  <p class="json-data">{{ loginForm.value | json }}</p>
+  <div class="json-data">
+    <p>{{ loginForm.value | json }}</p>
+  </div>
 </section>

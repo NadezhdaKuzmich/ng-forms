@@ -70,18 +70,24 @@
         flex-direction: column;
       }
 
+      details > .input-field:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
       input {
         max-width: 100%;
       }
 
       .btn {
-        margin-top: 20px;
+        margin-top: 10px;
       }
     }
   }
 
   .json-data {
+    max-width: 800px;
+    font-size: 14px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
   }
 }

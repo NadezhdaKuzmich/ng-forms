@@ -13,11 +13,15 @@ export class BindingComponent {
   };
 
   loginForm: FormGroup;
-  
+
   constructor() {
     this.loginForm = new FormGroup({
       email: new FormControl(''),
       password: new FormControl(''),
+      name: new FormGroup({
+        firstName: new FormControl(''),
+        lastName: new FormControl(''),
+      }),
     });
   }
 }
