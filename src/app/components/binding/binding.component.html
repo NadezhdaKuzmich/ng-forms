@@ -1,0 +1,37 @@
+<section>
+  <h2>Binding</h2>
+  <div class="content-wrap">
+    <div class="car">
+      <p><small>name:</small> {{ car.carName }}</p>
+      <p><small>year:</small> {{ car.year }}</p>
+    </div>
+    <div class="input-fields">
+      <label>
+        <span>Car</span>
+        <input type="text" [(ngModel)]="car.carName" maxlength="50" />
+      </label>
+      <label>
+        <span>Year</span>
+        <input type="number" [(ngModel)]="car.year" />
+      </label>
+    </div>
+  </div>
+</section>
+<section class="form-section">
+  <h2>Form</h2>
+  <form [formGroup]="loginForm">
+    <fieldset>
+      <legend>Login Form</legend>
+      <div class="input-field">
+        <label for="email">Email</label>
+        <input id="email" type="text" [formControlName]="'email'" />
+      </div>
+      <div class="input-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" [formControlName]="'password'" />
+      </div>
+      <input class="btn" type="submit" value="Submit" />
+    </fieldset>
+  </form>
+  <p class="json-data">{{ loginForm.value | json }}</p>
+</section>
