@@ -39,15 +39,13 @@
         </pre> -->
       </div>
 
-      <div class="input-field">
-        <label
-          for="phone{{ i + 1 }}"
-          [formArrayName]="'contacts'"
-          *ngFor="let contact of getContacts.controls; index as i"
-        >
-          {{ i + 1 }}.Enter phone number
-          <input id="phone{{ i + 1 }}" type="text" [formControlName]="i" />
-        </label>
+      <div
+        class="input-field contact-field"
+        [formArrayName]="'contacts'"
+        *ngFor="let contact of getContacts.controls; index as i"
+      >
+        <label for="phone{{ i + 1 }}"> {{ i + 1 }}.Enter phone number </label>
+        <input id="phone{{ i + 1 }}" type="text" [formControlName]="i" />
       </div>
       <button class="btn" (click)="addPhone()">Add phone</button>
 
