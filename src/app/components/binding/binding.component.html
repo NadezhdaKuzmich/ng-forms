@@ -22,6 +22,7 @@
   <form [formGroup]="loginForm">
     <fieldset>
       <legend>Login Form</legend>
+
       <div class="input-field">
         <label for="email">Email</label>
         <input id="email" type="text" [formControlName]="'email'" />
@@ -29,6 +30,7 @@
           {{ loginForm.get("email")?.errors | json }}
         </pre> -->
       </div>
+
       <div class="input-field">
         <label for="password">Password</label>
         <input id="password" type="password" [formControlName]="'password'" />
@@ -36,17 +38,32 @@
           {{ loginForm.get("password")?.errors | json }}
         </pre> -->
       </div>
+
+      <div class="input-field">
+        <label
+          for="phone{{ i + 1 }}"
+          [formArrayName]="'contacts'"
+          *ngFor="let contact of getContacts.controls; index as i"
+        >
+          {{ i + 1 }}.Enter phone number
+          <input id="phone{{ i + 1 }}" type="text" [formControlName]="i" />
+        </label>
+      </div>
+      <button class="btn" (click)="addPhone()">Add phone</button>
+
       <details formGroupName="name">
         <summary>Addition Info</summary>
         <div class="input-field">
           <label for="name">Name</label>
           <input id="name" type="text" formControlName="firstName" />
         </div>
+
         <div class="input-field">
           <label for="surname">Surname</label>
           <input id="surname" type="text" formControlName="lastName" />
         </div>
       </details>
+
       <div>
         <label>
           <input type="checkbox" formControlName="agree" />
@@ -56,11 +73,13 @@
           {{ loginForm.get("agree")?.errors | json }}
         </pre> -->
       </div>
+
       <input
         class="btn"
         type="submit"
         value="Submit"
         [disabled]="loginForm.invalid"
+        (click)="onSubmit()"
       />
     </fieldset>
   </form>

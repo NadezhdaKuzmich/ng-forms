@@ -85,6 +85,14 @@
     }
   }
 
+  .ng-invalid:not(form) {
+    border-bottom: 2px solid #fb9d9d;
+  }
+
+  .ng-valid:not(form, details, details input) {
+    border-bottom: 2px solid green;
+  }
+
   .json-data {
     max-width: 800px;
     font-size: 14px;
