@@ -29,7 +29,7 @@ p {
 }
 
 input {
-  max-width: 220px;
+  width: 250px;
   font-size: 16px;
   color: #3a4b65;
   border: 2px solid #a1b9df;
@@ -40,10 +40,26 @@ input {
 .btn {
   color: #fff;
   background: #6997d3;
-  border-color: transparent;
+  border: 2px solid transparent;
   border-radius: 8px;
   padding: 8px 14px;
+  transition: all 0.4s ease;
   cursor: pointer;
+
+  &.delete {
+    background: #fb9d9d;
+    border-color: #ec8787;
+
+    &:hover {
+      background: #ff9191;
+      border-color: #ffc3c3;
+    }
+  }
+
+  &:hover {
+    background: #3f72b7;
+    border: 2px solid #7eb4ff;
+  }
 
   &:disabled {
     background: #d1d6de;

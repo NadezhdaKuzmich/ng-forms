@@ -51,4 +51,8 @@ export class BindingComponent {
       ])
     );
   }
+
+  clearPhones() {
+    this.getContacts.removeAt(1);
+  }
 }

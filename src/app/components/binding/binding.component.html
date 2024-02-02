@@ -47,7 +47,10 @@
         <label for="phone{{ i + 1 }}"> {{ i + 1 }}.Enter phone number </label>
         <input id="phone{{ i + 1 }}" type="text" [formControlName]="i" />
       </div>
-      <button class="btn" (click)="addPhone()">Add phone</button>
+      <div class="set-btns">
+        <button class="btn" (click)="addPhone()">Add phone</button>
+        <button class="btn delete" (click)="clearPhones()">Clear phones</button>
+      </div>
 
       <details formGroupName="name">
         <summary>Addition Info</summary>
