@@ -53,6 +53,7 @@ export class BindingComponent {
   }
 
   clearPhones() {
+    this.getContacts.controls.splice(1);
     this.getContacts.removeAt(1);
   }
 }
