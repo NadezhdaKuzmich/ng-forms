@@ -107,3 +107,17 @@ form {
     border-color: #bec9db;
   }
 }
+
+.json-data {
+  font-size: 12px;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  &.error {
+    text-align: left;
+    margin-top: 4px;
+  }
+}

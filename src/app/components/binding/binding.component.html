@@ -32,7 +32,12 @@
 
       <div class="input-field">
         <label for="password">Password</label>
-        <input id="password" type="password" [formControlName]="'password'" />
+        <input
+          id="password"
+          type="password"
+          [formControlName]="'password'"
+          autocomplete="on"
+        />
         <!-- <pre>
           {{ loginForm.get("password")?.errors | json }}
         </pre> -->
@@ -82,9 +87,10 @@
         [disabled]="loginForm.invalid"
         (click)="onSubmit()"
       />
+
+      <div class="json-data">
+        <p>{{ loginForm.value | json }}</p>
+      </div>
     </fieldset>
   </form>
-  <div class="json-data">
-    <p>{{ loginForm.value | json }}</p>
-  </div>
 </section>

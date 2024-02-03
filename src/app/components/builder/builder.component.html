@@ -6,13 +6,25 @@
 
       <div class="input-field">
         <label for="login">Login</label>
-        <input id="login" type="text" [formControlName]="'login'" />
+        <input id="login" type="text" formControlName="login" />
+        <p class="status-info" *ngIf="form.get('login')?.dirty">
+          It's "dirty" field
+        </p>
       </div>
 
       <div class="input-field">
-        <label for="email">Email</label>
-        <input id="email" type="text" [formControlName]="'email'" />
+        <label for="email2">Email</label>
+        <input id="email2" type="text" formControlName="email" />
+        <p class="status-info" *ngIf="form.get('email')?.touched">
+          It's "touched" field
+        </p>
+        <div class="json-data error" *ngIf="form.get('email')?.errors !== null">
+          <!-- <p>{{ form.get("email")?.errors | json }}</p> -->
+          <p>error: {{ form.get("email")?.hasError('required') | json }}</p>
+        </div>
       </div>
+
+      <button class="btn" (click)="setNewLogin()">Set Login Alex</button>
 
       <input
         class="btn"
@@ -21,6 +33,12 @@
         [disabled]="form.invalid"
         (click)="handleSubmit()"
       />
+
+      <div class="json-data">
+        <p>
+          {{ form.value | json }}
+        </p>
+      </div>
     </fieldset>
   </form>
 </section>
