@@ -64,14 +64,15 @@
         </div>
       </details>
 
-      <div>
+      <div class="set-checkboxes">
+        <label for="subscribe" *ngIf="isAuthorized">
+          <input id="subscribe" type="checkbox" formControlName="subscribe" />
+          Subscribe
+        </label>
         <label>
           <input type="checkbox" formControlName="agree" />
           I Agree to Privacy Policy
         </label>
-        <!-- <pre>
-          {{ loginForm.get("agree")?.errors | json }}
-        </pre> -->
       </div>
 
       <input

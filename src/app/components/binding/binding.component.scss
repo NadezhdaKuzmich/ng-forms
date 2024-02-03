@@ -53,64 +53,34 @@
 }
 
 .form-section {
-  form {
-    max-width: 520px;
-    min-width: 300px;
-    margin: auto;
+  padding-bottom: 10px;
 
-    fieldset {
-      display: flex;
-      flex-direction: column;
-      border: 2px solid #7795bc;
-      border-radius: 8px;
-      padding: 30px 30px 40px;
-      gap: 12px;
+  .set-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 
-      .input-field {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .ng-invalid:not(form, .contact-field) {
-        border-bottom: 2px solid #fb9d9d;
-      }
-
-      .ng-valid:not(form, .contact-field, details, details input) {
-        border-bottom: 2px solid green;
-      }
-
-      details > .input-field:not(:last-child) {
-        margin-bottom: 12px;
-      }
-
-      input {
-        max-width: 100%;
-        width: auto;
-      }
-
-      .set-btns {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-
-        .btn {
-          width: 50%;
-          margin: 0;
-        }
-      }
-
-      .btn {
-        margin-top: 10px;
-      }
+    .btn {
+      width: 50%;
+      margin: 0;
     }
+  }
+
+  .set-checkboxes {
+    display: flex;
+    flex-direction: column;
   }
 
   .json-data {
     max-width: 800px;
     font-size: 14px;
     text-align: center;
-    margin: 20px auto;
+    margin: 20px auto 0;
+
+    p {
+      margin: 0;
+    }
   }
 
   pre {

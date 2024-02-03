@@ -11,7 +11,7 @@ export class BindingComponent {
     carName: 'Mazda',
     year: 2007,
   };
-
+  isAuthorized = false;
   loginForm: FormGroup;
 
   constructor() {
@@ -36,7 +36,14 @@ export class BindingComponent {
   }
 
   onSubmit() {
+    this.isAuthorized = true;
     this.loginForm.reset();
+    this.createNewControl();
+  }
+
+  createNewControl() {
+    this.loginForm.addControl('subscribe', new FormControl(false));
+    // this.loginForm.get('subscribe')?.setValidators(Validators.required);
   }
 
   get getContacts(): FormArray {

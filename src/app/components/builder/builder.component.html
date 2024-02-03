@@ -1,0 +1,26 @@
+<section class="form-builder">
+  <h2>Angular FormBuilder</h2>
+  <form [formGroup]="form">
+    <fieldset>
+      <legend>Login FormBuilder</legend>
+
+      <div class="input-field">
+        <label for="login">Login</label>
+        <input id="login" type="text" [formControlName]="'login'" />
+      </div>
+
+      <div class="input-field">
+        <label for="email">Email</label>
+        <input id="email" type="text" [formControlName]="'email'" />
+      </div>
+
+      <input
+        class="btn"
+        type="submit"
+        value="Submit"
+        [disabled]="form.invalid"
+        (click)="handleSubmit()"
+      />
+    </fieldset>
+  </form>
+</section>
