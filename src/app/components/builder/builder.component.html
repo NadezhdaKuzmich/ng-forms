@@ -20,19 +20,20 @@
         </p>
         <div class="json-data error" *ngIf="form.get('email')?.errors !== null">
           <!-- <p>{{ form.get("email")?.errors | json }}</p> -->
-          <p>error: {{ form.get("email")?.hasError('required') | json }}</p>
+          <p>error: {{ form.get("email")?.hasError("required") | json }}</p>
         </div>
       </div>
 
-      <button class="btn" (click)="setNewLogin()">Set Login Alex</button>
-
-      <input
-        class="btn"
-        type="submit"
-        value="Submit"
-        [disabled]="form.invalid"
-        (click)="handleSubmit()"
-      />
+      <div class="btns">
+        <button class="btn" (click)="setNewLogin()">Set Login Alex</button>
+        <input
+          class="btn"
+          type="submit"
+          value="Submit"
+          [disabled]="form.invalid"
+          (click)="handleSubmit()"
+        />
+      </div>
 
       <div class="json-data">
         <p>

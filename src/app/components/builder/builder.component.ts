@@ -34,7 +34,7 @@ export class BuilderComponent implements OnInit {
     // ERROR Error: NG01002: Must supply a value for form control with name: 'email'
     // this.form.setValue({login: 'Alex'})
     // this.form.setValue({ login: 'Alex', email: 'user-alex@gamil.com' });
-    // this.form.patchValue({ login: 'Alex' });
-    this.form.patchValue({ login: 'Alex' }, { emitEvent: false });
+    this.form.patchValue({ login: 'Alex' });
+    // this.form.patchValue({ login: 'Alex' }, { emitEvent: false });
   }
 }
