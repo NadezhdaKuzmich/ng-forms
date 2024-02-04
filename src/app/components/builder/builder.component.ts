@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AgeValidator } from './custom.validator';
+import { UserNameValidator } from './async.validator';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-builder',
@@ -9,10 +12,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class BuilderComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService
+  ) {
     this.form = this.formBuilder.group({
-      login: '',
+      login: [
+        '',
+        [Validators.required],
+        [UserNameValidator.createValidator(this.userService)],
+      ],
       email: [null, [Validators.required, Validators.email]],
+      age: [null, [Validators.required, AgeValidator]],
     });
   }
 

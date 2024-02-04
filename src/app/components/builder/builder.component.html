@@ -10,6 +10,9 @@
         <p class="status-info" *ngIf="form.get('login')?.dirty">
           It's "dirty" field
         </p>
+        <p class="status-info" *ngIf="form.get('login')?.errors !== null">
+          {{ form.get("login")?.errors | json }}
+        </p>
       </div>
 
       <div class="input-field">
@@ -24,13 +27,21 @@
         </div>
       </div>
 
+      <div class="input-field">
+        <label for="age">Age</label>
+        <input id="age" type="number" formControlName="age" />
+        <div class="json-data error" *ngIf="form.get('age')?.errors !== null">
+          <p>error: {{ form.get("age")?.hasError("age") | json }}</p>
+        </div>
+      </div>
+
       <div class="btns">
         <button class="btn" (click)="setNewLogin()">Set Login Alex</button>
         <input
           class="btn"
           type="submit"
           value="Submit"
-          [disabled]="form.invalid"
+          [disabled]="!form.valid"
           (click)="handleSubmit()"
         />
       </div>
